@@ -1,0 +1,19 @@
+//C code for reading 3D palmprint ROI
+FILE* fp_3Dpalm;
+CString strFileName = ""; //Please input the path of the filename in "", e.g."C:\\Sub3D_I_7_0.dat".	
+fp_3Dpalm = fopen(strFileName, "rb");
+if (!fp_3Dpalm) 
+{
+	AfxMessageBox("Can not open the 3D palmprint file!");
+	return;
+}
+//ROI_SIZE is 128*128  
+float data_3Dpalm[128*128];
+fread(data_3Dpalm, sizeof(float), 128*128, fp_3Dpalm); 
+fclose(fp_3Dpalm);
+
+
+%%Matlab code for reading 3D palmprint ROI
+fid = fopen('', 'r'); %Please input the path of the filename in '', e.g.'C:\Sub3D_I_7_0.dat'.
+data_3Dpalm = fread(fid, [128,128], 'float');
+fclose(fid);
