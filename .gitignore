@@ -1,0 +1,6 @@
+3DPalm_*
+PythonLib
+bib/
+!bib/3dpalm.bib
+src/others
+src/features.mat
